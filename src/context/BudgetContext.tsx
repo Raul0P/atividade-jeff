@@ -2,7 +2,6 @@ import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 interface Entry {
   id: number;
-  description: string;
   amount: number;
   type: 'receita' | 'despesa';
 }

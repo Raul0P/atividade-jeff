@@ -3,24 +3,16 @@ import { useBudget } from '../context/BudgetContext';
 
 const Despesas: React.FC = () => {
   const { addEntry } = useBudget();
-  const [description, setDescription] = useState('');
   const [amount, setAmount] = useState(0);
 
   const handleSubmit = () => {
-    addEntry({ id: Date.now(), description, amount, type: 'despesa' });
-    setDescription('');
+    addEntry({ id: Date.now(), amount, type: 'despesa' });
     setAmount(0);
   };
 
   return (
     <div>
       <h2>Adicionar Despesa</h2>
-      <input
-        type="text"
-        placeholder="Descrição"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-      />
       <input
         type="number"
         placeholder="Valor"
